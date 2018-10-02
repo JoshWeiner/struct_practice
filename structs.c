@@ -29,8 +29,6 @@ int main(){
   struct australia vegemite;
   vegemite.animal = "Vegemite sandwich";
   vegemite.cuteness = 9999;
-  
-  
-  printf("Name of animal: %s \n",wombat.animal);
-  printf("Level of cuteness: %d \n",wombat.cuteness);
+
+  struct_print(wombat);
 }
