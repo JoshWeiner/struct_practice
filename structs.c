@@ -45,7 +45,7 @@ int main() {
   printf("Modifying with values: %s, %d \n", "koala", 100);
   animal = modifier(animal, "koala", 100);
   struct_printer(animal);
-  printf("Modifying with values: %s, %d \n", "", 65);
+  printf("Modifying with values: %s, %d \n", "dingo", 65);
   animal = modifier(animal, "", 65);
   struct_printer(animal);
 
