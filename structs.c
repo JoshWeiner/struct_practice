@@ -17,10 +17,9 @@ void struct_printer(struct australia s) {
   printf("Deadliness: %d \n", s.deadliness);
 }
 
-struct australia modifier(struct australia s, char * animal_replace, int deadliness_replace) {
-  s.name = animal_replace;
-  s.deadliness = deadliness_replace;
-  return s;
+struct australia modifier(struct australia *s, char * animal_replace, int deadliness_replace) {
+  s->name = animal_replace;
+  s->deadliness = deadliness_replace;
 }
 
 int main() {
@@ -40,13 +39,13 @@ int main() {
   printf("---------------------------\n");
 
   printf("Modifying with values: %s, %d \n", "kiwi", 0);
-  animal = modifier(animal, "kiwi", 0);
+  modifier(*animal, "kiwi", 0);
   struct_printer(animal);
   printf("Modifying with values: %s, %d \n", "koala", 100);
-  animal = modifier(animal, "koala", 100);
+  modifier(*animal, "koala", 100);
   struct_printer(animal);
   printf("Modifying with values: %s, %d \n", "dingo", 65);
-  animal = modifier(animal, "dingo", 65);
+  modifier(*animal, "dingo", 65);
   struct_printer(animal);
 
 }
